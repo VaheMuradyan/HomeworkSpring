@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    <context:annotation-config/>
+    <bean id = "address" class = "Address">
+        <constructor-arg value="14"></constructor-arg>
+        <constructor-arg value="54"></constructor-arg>
+    </bean>
+
+    <bean id = "human" class = "Human">
+        <constructor-arg value="Vahe"></constructor-arg>
+        <property name="address" ref="address"></property>
+    </bean>
+
+    <bean id = "bank" class="Bank">
+        <constructor-arg value="150000"></constructor-arg>
+        <property name="director" ref="human"></property>
+    </bean>
+</beans>
